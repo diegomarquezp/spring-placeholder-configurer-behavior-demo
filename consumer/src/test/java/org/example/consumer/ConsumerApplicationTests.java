@@ -27,9 +27,9 @@ class ConsumerApplicationTests {
     ResponseEntity<String> response = this.testRestTemplate.getForEntity("/", String.class);
     assertTrue(response.getStatusCode().is2xxSuccessful());
     System.out.println(response.getBody());
-    assertTrue(response.getBody().contains(EXPECTED_CONTENT_FROM_VALUE_BAR_ANNOTATION)); // OK
-    assertTrue(response.getBody().contains(EXPECTED_CONTENT_FROM_VALUE_BAZ_ANNOTATION)); // OK
-    assertTrue(response.getBody().contains(EXPECTED_CONTENT_FROM_CONFIG_FILE));          // OK
+    assertTrue(response.getBody().contains(EXPECTED_CONTENT_FROM_VALUE_BAR_ANNOTATION)); // FAIL
+    assertTrue(response.getBody().contains(EXPECTED_CONTENT_FROM_VALUE_BAZ_ANNOTATION)); // FAIL
+    assertTrue(response.getBody().contains(EXPECTED_CONTENT_FROM_CONFIG_FILE));          // FAIL
   }
 
 }
